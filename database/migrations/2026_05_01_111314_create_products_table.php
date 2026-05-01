@@ -9,15 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('products', function (Blueprint $table) {
-            $table->string('name');
-            $table->integer('quantity');
-            $table->decimal('price', 10, 2);
-        });
-    }
-
+   public function up(): void
+{
+    Schema::create('products', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');      // Para sa pangalan sa produkto
+        $table->integer('quantity'); // Para sa gidaghanon
+        $table->decimal('price', 10, 2); // Para sa presyo
+        $table->timestamps();
+    });
+}
     /**
      * Reverse the migrations.
      */
